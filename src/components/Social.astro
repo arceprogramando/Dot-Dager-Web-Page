@@ -1,0 +1,8 @@
+---
+const { platform, icon, alt, classValues } = Astro.props;
+import { Icon } from 'astro-icon/components';
+---
+
+<a href={platform} target="_blank" class="text-black" title={`Ver ${alt}`} aria-label={alt}>
+  {icon ? <Icon name={icon} width={24} height={24} title={alt} aria-label={alt} class={classValues} /> : 'no tiene'}
+</a>

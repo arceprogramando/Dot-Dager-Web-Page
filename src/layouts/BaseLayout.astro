@@ -1,0 +1,26 @@
+---
+import Layout from './Layout.astro';
+import SideMenu from '../components/SideMenu.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+const { title } = Astro.props;
+---
+
+<Layout>
+  <Header />
+  <SideMenu />
+  <div class="mx-auto max-w-5xl overflow-hidden">
+  <main class="flex flex-col items-center max-w-5xl mx-auto pb-40 reset mt-1">
+      <h2 class="text-center max-w-2xl uppercase p-2 text-4xl leading-none md:text-5xl font-bold gradient" transition:animate="slide">{title}</h2>
+      <slot />
+      <div
+        class="absolute bottom-0 left-[-20%] right-0 top-[-10%] h-[500px] w-[500px] rounded-full bg-[radial-gradient(circle_farthest-side,rgba(255,0,182,.15),rgba(255,255,255,0))]"
+      >
+      </div><div
+        class="absolute bottom-0 right-[-20%] top-[-10%] h-[500px] w-[500px] rounded-full bg-[radial-gradient(circle_farthest-side,rgba(255,0,182,.15),rgba(255,255,255,0))]"
+      >
+      </div>
+    </div>
+  </main>
+  <Footer />
+</Layout>

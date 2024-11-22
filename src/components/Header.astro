@@ -1,0 +1,20 @@
+---
+import Navigation from './Navigation.astro';
+---
+
+<header class="sticky top-0 right-0 md:static z-50 md:block py-2 shadow-md">
+  <nav class="flex justify-around md:justify-between items-center max-w-3xl mx-auto m-4">
+    <a href="/">
+      <h1 class="sr-only">Dot Dager</h1>
+      <h1 class=" text-2xl font-bold">{'<DotDager/>'}</h1>
+    </a>
+
+    <Navigation />
+  </nav>
+</header>
+
+<style>
+  header{
+    background-color: #000000;
+  }
+</style>

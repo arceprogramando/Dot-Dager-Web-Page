@@ -1,8 +1,18 @@
 ---
-import { Welcome } from 'astro:components';
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+import SideMenu from '../components/SideMenu.astro';
 import Layout from '../layouts/Layout.astro';
+
+const title = 'Inicio';
 ---
 
 <Layout>
-	<Welcome title="Welcome to Astro" />
+  <Header />
+  <SideMenu />
+  <main class="flex flex-col items-center max-w-5xl mx-auto pb-40 reset mt-1">
+    <h2 class="text-center max-w-2xl uppercase p-2 text-4xl leading-none md:text-5xl font-bold gradient" transition:animate="slide">{title}</h2>
+    <slot />
+  </main>
+  <Footer />
 </Layout>

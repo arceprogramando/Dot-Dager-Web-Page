@@ -1,0 +1,31 @@
+---
+import Social from './Social.astro';
+
+const socialMedias = [
+  { red: 'instagram', perfil: 'https://www.instagram.com/dager.32/', alt: 'Síguenos en Instagram' },
+  { red: 'github', perfil: 'https://github.com/MarianoVilla', alt: 'Ver Proyecto en Github' },
+  { red: 'x', perfil: 'https://x.com/Dager_32', alt: 'Seguime en X' },
+  { red: 'twichtv', perfil: 'https://www.twitch.tv/dagerxiv', alt: 'Ver canal de Twich.tv' },
+  { red: 'youtube', perfil: 'https://www.youtube.com/@DotDager', alt: 'Ver canal de Youtube' },
+];
+---
+
+<footer class="py-2 bg-opacity-90 mx-auto sticky bottom-0 w-full bg-slate-100 z-50">
+  <nav>
+    <ul class="flex gap-4 justify-center items-center font-bold">
+      {
+        socialMedias.map((media) => (
+          <li>
+            <Social
+              platform={media.perfil}
+              red={media.red}
+              icon={media.red}
+              alt={media.alt}
+              classValues="hover:underline font-bold uppercase hover:text-green-900"
+            />
+          </li>
+        ))
+      }
+    </ul>
+  </nav>
+</footer>

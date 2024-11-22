@@ -11,3 +11,61 @@
     <slot />
   </body>
 </html>
+
+<style is:global>
+  .gradient {
+    font-weight: bold;
+    background-image: linear-gradient(92deg, #635454 5%, #000000 90%, #635454);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: fade-in 1s ease-in-out;
+  }
+
+  @keyframes fade-in {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  body {
+    --sb-track-color: #ffffff;
+    --sb-thumb-color: #02d9ad;
+    --sb-size: 10px;
+    overflow-y: scroll;
+    background-color: #141a19;
+    color: #02d9ad;
+    overflow-x: hidden;
+  }
+
+  body::-webkit-scrollbar {
+    width: var(--sb-size);
+  }
+
+  body::-webkit-scrollbar-track {
+    background: var(--sb-track-color);
+  }
+
+  body::-webkit-scrollbar-thumb {
+    background: var(--sb-thumb-color);
+    border-radius: 5px;
+  }
+
+  @supports not selector(::-webkit-scrollbar) {
+    body {
+      scrollbar-color: var(--sb-thumb-color) var(--sb-track-color);
+    }
+  }
+
+  .reset {
+    min-height: 100dvh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  main {
+    flex-grow: 1;
+  }
+</style>
